@@ -6,6 +6,10 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    trello: {
+      apiKey: process.env.API_KEY,
+      userToken: process.env.USER_TOKEN
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
