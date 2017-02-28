@@ -1,2 +1,10 @@
-<h1>{{model.fullName}}</h1>
-{{outlet}}
+<div id="surface">
+  <div id="header">
+    <span class="user">{{model.fullName}}</span>
+    <span class="member"><img class="member-avatar" height="30" width="30" src="https://trello-avatars.s3.amazonaws.com/{{model.avatarHash}}/30.png" alt="Samanta de Barros (samantadebarros)" title="Samanta de Barros (samantadebarros)">
+    </span>
+  </div>
+  <div id="content">
+    {{outlet}}
+  </div>
+</div>

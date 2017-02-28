@@ -1,3 +1,10 @@
-{{#each model as |board|}}
-  <h2>{{#link-to 'board' board.id}}{{board.name}}{{/link-to}}</h2>
-{{/each}}
+<div class="member-boards">
+  <div class="board-header"><h3 class="name">My Boards</h3></div>
+  <ul class="board-lists">
+    {{#each model as |board|}}
+      <li class="board-lists-item">
+        {{board-tile board=board}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
