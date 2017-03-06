@@ -10,6 +10,12 @@ module.exports = function(environment) {
       apiKey: process.env.API_KEY,
       userToken: process.env.USER_TOKEN
     },
+    manifest: {
+      enabled: true,
+      appcacheFile: "/manifest.appcache",
+      excludePaths: ['index.html', 'manifest.ember-web-app.json', 'tests/index.html', 'robots.txt', 'crossdomain.xml', 'testem.js'],
+      showCreateDate: true
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
