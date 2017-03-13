@@ -11,8 +11,12 @@ module.exports = function() {
     background_color: "#0079bf",
     theme_color: "#0079bf",
     icons: [{
-      src: "/images/icons/android-600x600.png",
+      src: "/images/icons/icon-600x600.png",
       sizes: "600x600",
+      type: "image/png"
+    }, {
+      src: "/images/icons/icon-192x192.png",
+      sizes: "192x192",
       type: "image/png"
     }]
   };
