@@ -1,13 +1,14 @@
 import Ember from 'ember';
 import config from "trello-client/config/environment";
-
-let { $ } = Ember;
+import fetch from "ember-network/fetch";
 
 export default Ember.Route.extend({
   model() {
     let key = config.trello.apiKey;
     let token = config.trello.userToken;
 
-    return $.getJSON(`https://api.trello.com/1/members/me/boards?token=${token}&key=${key}`);
+    return fetch(`https://api.trello.com/1/members/me/boards?token=${token}&key=${key}`).then(function(response) {
+      return response.json();
+    });
   }
 });
