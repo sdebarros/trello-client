@@ -11,7 +11,8 @@ export default Ember.Route.extend({
 
     return RSVP.hash({
       board: $.getJSON(`https://api.trello.com/1/boards/${boardId}?token=${token}&key=${key}`),
-      lists: $.getJSON(`https://api.trello.com/1/boards/${boardId}/lists?token=${token}&key=${key}`)
+      lists: $.getJSON(`https://api.trello.com/1/boards/${boardId}/lists?token=${token}&key=${key}`),
+      cards: $.getJSON(`https://api.trello.com/1/boards/${boardId}/cards?token=${token}&key=${key}`)
     });
   }
 });
