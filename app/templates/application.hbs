@@ -1,6 +1,6 @@
 <div id="surface">
   <div id="header">
-    <span class="user">{{model.fullName}}</span>
+    {{#link-to 'boards'}}<span class="user">{{model.fullName}}</span>{{/link-to}}
     <span class="member"><img class="member-avatar" height="30" width="30" src="https://trello-avatars.s3.amazonaws.com/{{model.avatarHash}}/30.png" alt="Samanta de Barros (samantadebarros)" title="Samanta de Barros (samantadebarros)">
     </span>
   </div>

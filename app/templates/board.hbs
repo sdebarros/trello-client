@@ -1,4 +1,38 @@
-<h2>{{model.board.name}}</h2>
-{{#each model.lists as |list|}}
-  <h3>{{list.name}}</h3>
-{{/each}}
+{{#board-background board=model.board class="board-wrapper body-webkit-scrollbars body-custom-board-background body-light-board-background body-board-view"}}
+  <div class="board-main-content">
+    <div class="board-header u-clearfix js-board-header">
+      <a class="board-header-btn board-header-btn-name js-rename-board" href="#"><span class="board-header-btn-text" dir="auto">{{model.board.name}}</span></a>
+    </div>
+
+    <div class="board-canvas">
+      <div id="board">
+        {{#each model.lists as |list|}}
+          <div class="js-list list-wrapper">
+            <div class="list js-list-content">
+              <div class="list-header js-list-header u-clearfix is-menu-shown">
+                <div class="list-header-target js-editing-target"></div>
+                <h2 class="list-header-name-assist js-list-name-assist" dir="auto" style="display:inline;font-size:14px">{{list.name}}</h2>
+              </div>
+              <div class="list-cards u-fancy-scrollbar u-clearfix js-list-cards js-sortable ui-sortable">
+                <div class="list-card js-member-droppable ui-droppable aging-level-3 aging-regular">
+                  <div class="list-card-cover js-card-cover"></div>
+                  <span class="icon-sm icon-edit list-card-operation dark-hover js-open-quick-card-editor js-card-menu"></span>
+                  <div class="list-card-stickers-area hide">
+                    <div class="stickers js-card-stickers"></div>
+                  </div>
+                  <div class="list-card-details">
+                    <div class="list-card-labels js-card-labels"></div>
+                    <a class="list-card-title js-card-name" dir="auto" href="/c/k4MjHnSi/156-cuadros-posters"><span class="card-short-id hide">#156</span>Cuadros/posters?</a>
+                    <div class="badges"><span class="js-badges"></span><span class="js-plugin-badges"><span></span></span></div>
+                    <div class="list-card-members js-list-card-members"></div>
+                  </div>
+                  <p class="list-card-dropzone">Drop files to upload.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{/board-background}}
