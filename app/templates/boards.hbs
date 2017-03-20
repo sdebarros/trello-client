@@ -1,10 +1,23 @@
-<div class="member-boards">
-  <div class="board-header"><h3 class="name">My Boards</h3></div>
-  <ul class="board-lists">
-    {{#each model as |board|}}
-      <li class="board-lists-item">
-        {{board-tile board=board}}
-      </li>
-    {{/each}}
-  </ul>
+<div class="member-boards-view">
+  <div class="boards-page-board-section mod-no-sidebar">
+    {{#board-title icon='icon-star'}}Starred Boards{{/board-title}}
+    <ul class="boards-page-board-section-list">
+      {{#each (reject-by 'closed' (filter-by 'starred' model)) as |board|}}
+        <li class="boards-page-board-section-list-item">
+          {{board-tile board=board}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="boards-page-board-section mod-no-sidebar">
+    {{#board-title icon='icon-member'}}Personal Boards{{/board-title}}
+    <ul class="boards-page-board-section-list">
+      {{#each (reject-by 'closed' (reject-by 'idOrganization' model)) as |board|}}
+        <li class="boards-page-board-section-list-item">
+          {{board-tile board=board}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 </div>
