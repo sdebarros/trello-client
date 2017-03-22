@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('boards', { path: '/' });
-  this.route('board', { path: '/board/:board_id' });
+  this.mount('board-view', { as: 'board' });
 });
 
 export default Router;
