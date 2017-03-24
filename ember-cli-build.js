@@ -17,7 +17,8 @@ module.exports = function(defaults) {
       version: '1'
     },
     inlineContent: {
-      'critical-path-css': 'app/styles/app.css'
+      'critical-path-css': 'app/styles/app.css',
+      'board-css': 'app/styles/board.css'
     }
   });
 
