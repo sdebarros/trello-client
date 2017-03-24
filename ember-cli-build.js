@@ -15,6 +15,9 @@ module.exports = function(defaults) {
 
       // changing this version number will bust the cache
       version: '1'
+    },
+    inlineContent: {
+      'critical-path-css': 'app/styles/app.css'
     }
   });
 
